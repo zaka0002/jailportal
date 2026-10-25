@@ -10,7 +10,7 @@ const PALETTE = [
 	"bg-teal-500/15 text-teal-500",
 	"bg-sky-500/15 text-sky-500",
 	"bg-indigo-500/15 text-indigo-500",
-	"bg-violet-500/15 text-violet-500",
+	"bg-brand/15 text-brand",
 	"bg-fuchsia-500/15 text-fuchsia-500",
 ];
 const DEFAULT_PALETTE = "bg-secondary text-foreground";

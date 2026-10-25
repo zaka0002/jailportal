@@ -3,6 +3,7 @@ import { APP_CATALOG } from "@/lib/catalog";
 import { ChevronRight, Package } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
+import { CleanupCard } from "./CleanupCard";
 
 const LAUNCHER = APP_CATALOG.find((a) => a.id === "immortal-launcher");
 
@@ -16,6 +17,8 @@ export function QuickActions() {
 			</h3>
 
 			{LAUNCHER && <AppCard app={LAUNCHER} />}
+
+			<CleanupCard />
 
 			<Link
 				to="/apps"

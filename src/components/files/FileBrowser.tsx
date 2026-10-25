@@ -325,7 +325,6 @@ export function FileBrowser() {
 function EntryIcon({ type }: { type: FileEntry["type"] }) {
 	if (type === "directory")
 		return <Folder className="h-4 w-4 shrink-0 text-sky-500" />;
-	if (type === "link")
-		return <Link2 className="h-4 w-4 shrink-0 text-violet-500" />;
+	if (type === "link") return <Link2 className="h-4 w-4 shrink-0 text-brand" />;
 	return <FileIcon className="h-4 w-4 shrink-0 text-muted-foreground" />;
 }

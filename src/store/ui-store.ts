@@ -27,7 +27,7 @@ export const useUIStore = create<UIStore>()(
 				set((state) => ({ sidebarCollapsed: !state.sidebarCollapsed })),
 		}),
 		{
-			name: "openportal-ui",
+			name: "jailportal-ui",
 		},
 	),
 );

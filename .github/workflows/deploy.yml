@@ -34,8 +34,10 @@ jobs:
 
       - run: pnpm lint
 
-      # Served from the custom domain root (openportal.cc), so build with base "/".
+      # Served from GitHub Pages under the repo name, so build with that base.
       - run: pnpm build
+        env:
+          VITE_BASE: /jailportal/
 
       # SPA fallback so deep links resolve to index.html.
       - run: cp dist/index.html dist/404.html

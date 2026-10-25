@@ -1,6 +1,6 @@
 {
-	"name": "OpenPortal",
-	"short_name": "OpenPortal",
+	"name": "JailPortal",
+	"short_name": "JailPortal",
 	"description": "Manage your Meta Portal from the browser via WebUSB + ADB",
 	"start_url": ".",
 	"scope": ".",

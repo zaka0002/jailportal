@@ -88,7 +88,7 @@ export function Sidebar({
 			)}
 
 			<aside
-				className={`fixed inset-y-0 left-0 z-40 flex h-full w-56 shrink-0 flex-col border-r border-border bg-card transition-transform md:static md:translate-x-0 ${
+				className={`fixed inset-y-0 left-0 z-40 flex h-full w-56 shrink-0 flex-col border-r border-border bg-card/70 backdrop-blur-md transition-transform md:static md:translate-x-0 ${
 					mobileOpen ? "translate-x-0" : "-translate-x-full"
 				}`}
 			>
@@ -120,7 +120,7 @@ export function Sidebar({
 
 				<div className="border-t border-border p-3">
 					<a
-						href="https://github.com/andronedev/openportal"
+						href="https://github.com/zaka0002/jailportal"
 						target="_blank"
 						rel="noreferrer"
 						className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground"

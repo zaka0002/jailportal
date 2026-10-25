@@ -1,6 +1,10 @@
 import { cn } from "@/lib/utils";
 import { useId } from "react";
 
+/**
+ * JailPortal mark: the Portal's rounded screen with prison bars, the last one
+ * bent open (jailbreak). Meta's blue palette, never Meta's own logo.
+ */
 export function LogoMark({ className }: { className?: string }) {
 	const id = useId();
 	return (
@@ -10,20 +14,39 @@ export function LogoMark({ className }: { className?: string }) {
 			aria-hidden="true"
 		>
 			<defs>
-				<linearGradient id={id} x1="0" y1="1" x2="1" y2="0">
-					<stop offset="0" stopColor="#7c3aed" />
-					<stop offset="1" stopColor="#a78bfa" />
+				{/* userSpaceOnUse: a bounding-box gradient can't paint the zero-width bars */}
+				<linearGradient
+					id={id}
+					gradientUnits="userSpaceOnUse"
+					x1="4.5"
+					y1="27.5"
+					x2="27.5"
+					y2="4.5"
+				>
+					<stop offset="0" stopColor="#0064e0" />
+					<stop offset="1" stopColor="#00b2ff" />
 				</linearGradient>
 			</defs>
-			<path
-				d="M 27.5 13.5 L 27.5 20.5 A 7 7 0 0 1 20.5 27.5 L 11.5 27.5 A 7 7 0 0 1 4.5 20.5 L 4.5 11.5 A 7 7 0 0 1 11.5 4.5 L 18.5 4.5"
+			<rect
+				x="4.5"
+				y="4.5"
+				width="23"
+				height="23"
+				rx="7"
 				fill="none"
 				stroke={`url(#${id})`}
-				strokeWidth="4.5"
-				strokeLinecap="round"
-				strokeLinejoin="round"
+				strokeWidth="3.5"
 			/>
-			<circle cx="25.45" cy="6.55" r="2.1" fill="#a78bfa" />
+			<g
+				fill="none"
+				stroke={`url(#${id})`}
+				strokeWidth="2.6"
+				strokeLinecap="round"
+			>
+				<path d="M 11.5 10 V 22" />
+				<path d="M 16 10 V 22" />
+				<path d="M 20.5 22 V 17 Q 20.5 12.5 24.5 10.5" />
+			</g>
 		</svg>
 	);
 }
@@ -31,8 +54,8 @@ export function LogoMark({ className }: { className?: string }) {
 export function LogoWordmark({ className }: { className?: string }) {
 	return (
 		<span className={cn("tracking-tight", className)}>
-			Open
-			<span className="text-violet-600 dark:text-violet-400">Portal</span>
+			Jail
+			<span className="text-brand dark:text-brand-light">Portal</span>
 		</span>
 	);
 }

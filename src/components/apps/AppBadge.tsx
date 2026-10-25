@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 const TONES = {
 	emerald: "bg-emerald-500/10 text-emerald-500",
 	amber: "bg-amber-500/10 text-amber-500",
-	violet: "bg-violet-500/10 text-violet-500",
+	brand: "bg-brand/10 text-brand",
 	sky: "bg-sky-500/10 text-sky-500",
 	neutral: "bg-secondary text-muted-foreground",
 } as const;

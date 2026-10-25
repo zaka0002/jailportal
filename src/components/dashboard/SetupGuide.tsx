@@ -4,12 +4,15 @@ import { ChevronRight, Package } from "lucide-react";
 import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
+import { CleanupCard } from "./CleanupCard";
 
 const LAUNCHER = APP_CATALOG.find((a) => a.id === "immortal-launcher");
+const REVEIL_ALEXA = APP_CATALOG.find((a) => a.id === "reveil-alexa");
 
 /**
- * The two actions that matter most to a newcomer, framed as a guided two-step
- * setup: install a launcher, then add apps. Shown on the Classic dashboard.
+ * The actions that matter most to a newcomer, framed as a guided setup:
+ * launcher, hands-free Alexa, clean-up, then more apps. Shown on the Classic
+ * dashboard.
  */
 export function SetupGuide() {
 	const { t } = useTranslation("dashboard");
@@ -27,6 +30,22 @@ export function SetupGuide() {
 
 			<Step
 				number={2}
+				title={t("stepAlexaTitle")}
+				description={t("stepAlexaDesc")}
+			>
+				{REVEIL_ALEXA && <AppCard app={REVEIL_ALEXA} />}
+			</Step>
+
+			<Step
+				number={3}
+				title={t("stepCleanupTitle")}
+				description={t("stepCleanupDesc")}
+			>
+				<CleanupCard />
+			</Step>
+
+			<Step
+				number={4}
 				title={t("step2Title")}
 				description={t("step2Desc")}
 				last

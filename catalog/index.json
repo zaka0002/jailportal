@@ -1,6 +1,8 @@
 {
 	"order": [
 		"immortal-launcher",
+		"reveil-alexa",
+		"amazon-alexa",
 		"aurora-store",
 		"google-photos-screensaver",
 		"fdroid",
@@ -27,6 +29,7 @@
 	],
 	"featured": [
 		"immortal-launcher",
+		"reveil-alexa",
 		"google-photos-screensaver",
 		"portal-calendar",
 		"portal-iss-tracker",

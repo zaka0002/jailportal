@@ -220,7 +220,7 @@ export function LogcatPage() {
 									{line.priority}{" "}
 								</span>
 								{line.tag && (
-									<span className="text-violet-400">{line.tag}: </span>
+									<span className="text-brand-light">{line.tag}: </span>
 								)}
 								<span>{line.message}</span>
 							</div>

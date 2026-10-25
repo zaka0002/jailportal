@@ -181,7 +181,7 @@ function AppDetailView({ routePackage }: { routePackage: string | undefined }) {
 					</p>
 					<div className="mt-2 flex flex-wrap gap-1">
 						{catApp?.madeForPortal && (
-							<AppBadge tone="violet">
+							<AppBadge tone="brand">
 								<Sparkles className="h-3 w-3" />
 								{t("madeForPortal")}
 							</AppBadge>

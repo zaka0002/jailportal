@@ -1,0 +1,11 @@
+{
+	"id": "amazon-alexa",
+	"name": "Amazon Alexa",
+	"packageName": "com.amazon.dee.app",
+	"description": "Amazon's Alexa app. Version 2.2.508613.0 is the one known to open its voice screen on Portal; Réveil Alexa uses it for hands-free \"Alexa\"",
+	"category": "assistant",
+	"version": "2.2.508613.0",
+	"source": "external",
+	"downloadUrl": "https://www.apkmirror.com/?post_type=app_release&searchtype=apk&s=amazon+alexa+2.2.508613.0",
+	"skipUpdateCheck": true
+}

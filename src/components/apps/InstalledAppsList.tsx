@@ -232,7 +232,7 @@ function InstalledRow({
 							</span>
 						)}
 						{catApp?.madeForPortal && (
-							<AppBadge tone="violet" title={t("madeForPortal")}>
+							<AppBadge tone="brand" title={t("madeForPortal")}>
 								<Sparkles className="h-3 w-3" />
 								{t("madeForPortal")}
 							</AppBadge>

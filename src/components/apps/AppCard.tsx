@@ -81,7 +81,7 @@ export function AppCard({ app }: { app: CatalogApp }) {
 					</h4>
 					<div className="mt-1 flex flex-wrap gap-1">
 						{app.madeForPortal && (
-							<AppBadge tone="violet">
+							<AppBadge tone="brand">
 								<Sparkles className="h-3 w-3" />
 								{t("madeForPortal")}
 							</AppBadge>

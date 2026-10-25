@@ -1,7 +1,7 @@
-// Minimal runtime-caching service worker for OpenPortal.
+// Minimal runtime-caching service worker for JailPortal.
 // Strategy: network-first, falling back to cache so the app shell works offline
 // after the first visit. Hashed Vite assets are cached on demand.
-const CACHE = "openportal-v1";
+const CACHE = "jailportal-v1";
 
 self.addEventListener("install", () => {
 	self.skipWaiting();

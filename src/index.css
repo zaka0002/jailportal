@@ -2,6 +2,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* JailPortal brand: Meta's blue palette (the colors only, never Meta's logo). */
+@theme {
+	--color-brand: #0064e0;
+	--color-brand-light: #4da3ff;
+}
+
 :root {
 	--radius: 0.5rem;
 	--background: oklch(1 0 0);
@@ -23,6 +29,17 @@
 	--border: oklch(0.922 0 0);
 	--input: oklch(0.922 0 0);
 	--ring: oklch(0.708 0 0);
+	/* JailPortal page backdrop: Meta-blue glows over a soft vertical fade. */
+	--page-gradient: radial-gradient(
+			1200px 600px at 100% 0%,
+			rgb(0 100 224 / 0.14),
+			transparent 60%
+		),
+		radial-gradient(
+			900px 500px at 0% 100%,
+			rgb(0 178 255 / 0.1),
+			transparent 60%
+		), linear-gradient(180deg, #ffffff, #f2f6fd);
 }
 
 .dark {
@@ -45,6 +62,16 @@
 	--border: oklch(0.269 0 0);
 	--input: oklch(0.269 0 0);
 	--ring: oklch(0.439 0 0);
+	--page-gradient: radial-gradient(
+			1200px 700px at 100% 0%,
+			rgb(0 100 224 / 0.3),
+			transparent 60%
+		),
+		radial-gradient(
+			900px 600px at 0% 100%,
+			rgb(0 178 255 / 0.14),
+			transparent 60%
+		), linear-gradient(180deg, #0b1020, #07090f);
 }
 
 @theme inline {
@@ -82,6 +109,8 @@
 	}
 	body {
 		@apply bg-background text-foreground antialiased;
+		background-image: var(--page-gradient);
+		background-attachment: fixed;
 		font-family: var(--font-sans);
 	}
 
