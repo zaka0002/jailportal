@@ -19,16 +19,16 @@ JailPortal is a fork of [OpenPortal](https://github.com/andronedev/openportal) b
 
 ## Hands-free Alexa
 
-Meta removed Alexa from the Portal, and on Android 10 the original client can't be restored without root (it needs the system-only `CAPTURE_AUDIO_HOTWORD` permission). The Amazon Alexa app installs fine, but its hands-free mode is disabled on the Portal.
+Meta removed Alexa from the Portal. Its original client (falcon) can be reinstalled, but on Android 10 its own "Hey Alexa" detector is deaf: the system silences a background app's microphone.
 
-[Réveil Alexa](https://github.com/zaka0002/reveil-alexa) fills the gap:
+[Réveil Alexa](https://github.com/zaka0002/reveil-alexa) fills the gap, whatever launcher is on screen:
 
 - Listens for "Alexa" offline with [Vosk](https://alphacephei.com/vosk/) and a small French model. Nothing leaves the device.
 - Only fires on a finished "Alexa" with high confidence, said at the end of what you say, so TV and conversation don't set it off.
-- Beeps and opens Alexa's voice screen, then gives the mic back to Alexa.
+- Beeps, brings the Portal's Alexa to the front and tells it to listen (the same handoff [Portal HA Bridge](https://github.com/RoadRunner-1024/portal-ha-bridge) uses), then takes the mic back when she's done.
 - Android 10 on the Portal silences a background app's microphone every so often. Réveil Alexa notices and takes it back within about a second.
 
-From the catalog, JailPortal installs it, grants the microphone, lets it open Alexa from the background, exempts it from battery optimisation and starts it. It asks for **Amazon Alexa 2.2.508613.0** first: that's the version known to open its voice screen on the Portal.
+From the catalog, JailPortal first installs **Alexa (Portal)**: the falcon APK from [starbrightlab/hey-dist](https://github.com/starbrightlab/hey-dist), checked against its SHA-256 on the device, with the permissions it needs to connect. Sign in with the code it shows at amazon.com/code. Then it installs Réveil Alexa, grants the microphone, lets it open Alexa from the background, exempts it from battery optimisation and starts it. If you use Portal HA Bridge too, turn off its *Alexa support*.
 
 ## Getting started
 

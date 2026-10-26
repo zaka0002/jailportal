@@ -37,6 +37,7 @@ submit apps that need root, exploits, or that violate the device owner's terms.
 | `repo` | for `github` | `owner/repo`. Required for `github` (APK from its releases); for any source it also renders that repo's README on the detail page. |
 | `assetPattern` | no | `github` only: case-insensitive regex to pick the right APK when a release ships several. |
 | `apkUrl` | for `url` | Direct APK URL. |
+| `apkSha256` | no | `url` only: expected SHA-256 of `apkUrl`, checked on the device before install. |
 | `iconUrl` / `iconFile` | no | Remote icon URL, or a bundled `public/app-icons/<packageName>.png` (`"iconFile": true`). |
 | `advancedOnly` | no | `true` restricts the app to Advanced mode. |
 | `skipUpdateCheck` | no | `true` suppresses the update check when upstream versioning is unreliable. |

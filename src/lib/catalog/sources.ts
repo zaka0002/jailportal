@@ -173,7 +173,12 @@ export async function resolveApk(
 			return resolveFdroidLatest(adb, app.packageName);
 		case "url":
 			if (!app.apkUrl) throw new Error("Missing APK URL");
-			return { version: app.version, url: app.apkUrl, urls: [app.apkUrl] };
+			return {
+				version: app.version,
+				url: app.apkUrl,
+				urls: [app.apkUrl],
+				sha256: app.apkSha256,
+			};
 		default:
 			throw new Error("This app can't be installed automatically");
 	}

@@ -98,6 +98,11 @@ export interface CatalogApp {
 	assetPattern?: string;
 	/** Direct APK URL for `source: "url"`. */
 	apkUrl?: string;
+	/**
+	 * Expected SHA-256 (lowercase hex) of `apkUrl`, verified on the device before
+	 * `pm install`. Use it for large or third-party-hosted APKs.
+	 */
+	apkSha256?: string;
 	downloadUrl?: string;
 	/** Optional remote icon URL; falls back to an initials avatar when absent. */
 	iconUrl?: string;
