@@ -80,6 +80,7 @@
 		"alexa": {
 			"title": "Alexa de Meta",
 			"hint": "L'Alexa d'origine du Portal (115 Mo), connectée avec amazon.com/code. Nécessaire pour qu'« Alexa » réponde."
-		}
+		},
+		"legacy": "Ce Portal est sous Android 9 (1re génération) : l'Alexa de Meta peut être restaurée avec son « Hey Alexa » d'origine. Installez Immortal et cochez « Restaurer Amazon Alexa » dans sa configuration."
 	}
 }

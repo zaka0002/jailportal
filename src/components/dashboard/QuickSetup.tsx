@@ -1,19 +1,24 @@
+import { AppCard } from "@/components/apps/AppCard";
 import { Button, Modal } from "@/components/ui/primitives";
 import {
-	QUICK_SETUP_ITEMS,
 	type QuickSetupId,
+	isLegacyAlexa,
 	quickSetupDone,
+	quickSetupItems,
 	runQuickSetupItem,
 } from "@/lib/adb/quick-setup";
+import { APP_CATALOG } from "@/lib/catalog";
 import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store/app-store";
 import { useDeviceStore } from "@/store/device-store";
 import { Check, ChevronRight, Loader2, Rocket, X } from "lucide-react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 
 type Status = "running" | "done" | "error";
+
+const IMMORTAL = APP_CATALOG.find((a) => a.id === "immortal-launcher");
 
 // Portals that already got the checklist this browser session (by serial).
 const SHOWN_KEY = "jailportal-quick-setup";
@@ -47,6 +52,9 @@ export function QuickSetupCard() {
 	const { t: tc } = useTranslation();
 	const adb = useDeviceStore((s) => s.adb);
 	const serial = useDeviceStore((s) => s.deviceInfo?.serial);
+	const apiLevel = useDeviceStore((s) => Number(s.deviceInfo?.apiLevel ?? 0));
+	const items = useMemo(() => quickSetupItems(apiLevel), [apiLevel]);
+	const legacy = isLegacyAlexa(apiLevel);
 	const refreshDeviceInfo = useDeviceStore((s) => s.refreshDeviceInfo);
 	const refreshInstalled = useAppStore((s) => s.refreshInstalled);
 
@@ -70,10 +78,8 @@ export function QuickSetupCard() {
 		const done = adb ? await quickSetupDone(adb) : new Set<QuickSetupId>();
 		setInstalled(done);
 		// Pre-tick what is missing; things already there stay unticked.
-		setSelected(
-			new Set(QUICK_SETUP_ITEMS.map((i) => i.id).filter((id) => !done.has(id))),
-		);
-	}, [adb]);
+		setSelected(new Set(items.map((i) => i.id).filter((id) => !done.has(id))));
+	}, [adb, items]);
 
 	useEffect(() => {
 		if (open) {
@@ -95,7 +101,7 @@ export function QuickSetupCard() {
 		if (!adb) return;
 		setBusy(true);
 		let failed = 0;
-		for (const item of QUICK_SETUP_ITEMS) {
+		for (const item of items) {
 			if (!selected.has(item.id)) continue;
 			setStatus((s) => ({ ...s, [item.id]: "running" }));
 			setPercent(null);
@@ -169,7 +175,7 @@ export function QuickSetupCard() {
 			>
 				<div className="space-y-3">
 					<p className="text-muted-foreground">{t("quick.intro")}</p>
-					{QUICK_SETUP_ITEMS.map((item) => {
+					{items.map((item) => {
 						const s = status[item.id];
 						return (
 							<label
@@ -214,6 +220,14 @@ export function QuickSetupCard() {
 							</label>
 						);
 					})}
+					{legacy && IMMORTAL && (
+						<div className="space-y-2 border-t border-border pt-3">
+							<p className="text-xs text-muted-foreground">
+								{t("quick.legacy")}
+							</p>
+							<AppCard app={IMMORTAL} />
+						</div>
+					)}
 					{finished && selected.has("alexa") && (
 						<p className="text-xs text-muted-foreground">{t("quick.signIn")}</p>
 					)}

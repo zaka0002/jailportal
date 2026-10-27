@@ -80,6 +80,7 @@
 		"alexa": {
 			"title": "Meta's Alexa",
 			"hint": "The Portal's original Alexa (115 MB), signed in with amazon.com/code. Needed for \"Alexa\" to answer."
-		}
+		},
+		"legacy": "This Portal runs Android 9 (1st generation): Meta's Alexa with its own \"Hey Alexa\" can be restored. Install Immortal and tick \"Restore Amazon Alexa\" in its setup."
 	}
 }

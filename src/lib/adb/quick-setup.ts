@@ -38,6 +38,21 @@ export const QUICK_SETUP_ITEMS: readonly QuickSetupItem[] = [
 	{ id: "alexa", packageName: FALCON_PACKAGE },
 ];
 
+/**
+ * Items offered on a Portal at this API level. Gen-1 Portals (Android 9) can
+ * run Meta's Alexa with its own "Hey Alexa" again, which Immortal's setup
+ * restores, so the Android 10 workaround (Portal Accueil + falcon) is left out.
+ */
+export function quickSetupItems(apiLevel: number): readonly QuickSetupItem[] {
+	return isLegacyAlexa(apiLevel)
+		? QUICK_SETUP_ITEMS.filter((i) => i.id === "cleanup")
+		: QUICK_SETUP_ITEMS;
+}
+
+export function isLegacyAlexa(apiLevel: number): boolean {
+	return apiLevel > 0 && apiLevel < 29;
+}
+
 /** Which of the items are already on the Portal. */
 export async function quickSetupDone(adb: Adb): Promise<Set<QuickSetupId>> {
 	const packages = QUICK_SETUP_ITEMS.flatMap((i) =>
