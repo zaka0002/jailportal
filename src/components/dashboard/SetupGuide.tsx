@@ -1,17 +1,14 @@
-import { AppCard } from "@/components/apps/AppCard";
-import { APP_CATALOG } from "@/lib/catalog";
 import { ChevronRight, Package } from "lucide-react";
 import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import { CleanupCard } from "./CleanupCard";
-
-const LAUNCHER = APP_CATALOG.find((a) => a.id === "immortal-launcher");
-const REVEIL_ALEXA = APP_CATALOG.find((a) => a.id === "reveil-alexa");
+import { QuickSetupCard } from "./QuickSetup";
 
 /**
  * The actions that matter most to a newcomer, framed as a guided setup:
- * launcher, hands-free Alexa, clean-up, then more apps. Shown on the Classic
+ * the quick setup (home screen with hands-free Alexa), clean-up, then more
+ * apps. Shown on the Classic
  * dashboard.
  */
 export function SetupGuide() {
@@ -24,20 +21,16 @@ export function SetupGuide() {
 				<p className="text-sm text-muted-foreground">{t("setupSubtitle")}</p>
 			</div>
 
-			<Step number={1} title={t("step1Title")} description={t("step1Desc")}>
-				{LAUNCHER && <AppCard app={LAUNCHER} />}
+			<Step
+				number={1}
+				title={t("stepQuickTitle")}
+				description={t("stepQuickDesc")}
+			>
+				<QuickSetupCard />
 			</Step>
 
 			<Step
 				number={2}
-				title={t("stepAlexaTitle")}
-				description={t("stepAlexaDesc")}
-			>
-				{REVEIL_ALEXA && <AppCard app={REVEIL_ALEXA} />}
-			</Step>
-
-			<Step
-				number={3}
 				title={t("stepCleanupTitle")}
 				description={t("stepCleanupDesc")}
 			>
@@ -45,7 +38,7 @@ export function SetupGuide() {
 			</Step>
 
 			<Step
-				number={4}
+				number={3}
 				title={t("step2Title")}
 				description={t("step2Desc")}
 				last

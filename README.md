@@ -5,7 +5,7 @@
 
 Install apps on a Meta Portal, mirror its screen and poke around its shell, straight from a browser tab. It talks ADB over WebUSB, so there is nothing to install on your computer and no server in the middle.
 
-JailPortal is a fork of [OpenPortal](https://github.com/andronedev/openportal) by andronedev that adds **hands-free Alexa** for Portals running Android 10.
+JailPortal is a fork of [OpenPortal](https://github.com/andronedev/openportal) by andronedev that adds a **home screen with hands-free Alexa** for Portals running Android 10.
 
 **→ [zaka0002.github.io/jailportal](https://zaka0002.github.io/jailportal/)**
 
@@ -15,20 +15,20 @@ JailPortal is a fork of [OpenPortal](https://github.com/andronedev/openportal) b
 - Launch, stop, clear or uninstall what's already on the device
 - Mirror and control the screen (scrcpy)
 - Browse files, open a shell, read logcat, edit feature flags *(Advanced mode)*
-- **Say "Alexa" again**: one-click install of [Réveil Alexa](https://github.com/zaka0002/reveil-alexa), with every permission set for you
+- **Quick setup on connect**: tick what you want (a home screen that answers "Alexa", Meta's Alexa, a clean-up) and JailPortal does the rest
 
 ## Hands-free Alexa
 
-Meta removed Alexa from the Portal. Its original client (falcon) can be reinstalled, but on Android 10 its own "Hey Alexa" detector is deaf: the system silences a background app's microphone.
+Meta removed Alexa from the Portal. Its original client (falcon) can be reinstalled, but on Android 10 its own "Hey Alexa" detector is deaf: the system only lets the app in front use the microphone.
 
-[Réveil Alexa](https://github.com/zaka0002/reveil-alexa) fills the gap, whatever launcher is on screen:
+[Portal Accueil](https://github.com/zaka0002/portal-accueil) gets around it by being the home screen itself, since that is what's on screen almost all the time:
 
+- Clock, weather and your apps, which you can reorder by dragging, rename, re-icon or hide.
 - Listens for "Alexa" offline with [Vosk](https://alphacephei.com/vosk/) and a small French model. Nothing leaves the device.
 - Only fires on a finished "Alexa" with high confidence, said at the end of what you say, so TV and conversation don't set it off.
-- Beeps, brings the Portal's Alexa to the front and tells it to listen (the same handoff [Portal HA Bridge](https://github.com/RoadRunner-1024/portal-ha-bridge) uses), then takes the mic back when she's done.
-- Android 10 on the Portal silences a background app's microphone every so often. Réveil Alexa notices and takes it back within about a second.
+- Beeps, brings the Portal's Alexa to the front and tells it to listen (the same handoff [Portal HA Bridge](https://github.com/RoadRunner-1024/portal-ha-bridge) uses), then comes back to the home screen.
 
-From the catalog, JailPortal first installs **Alexa (Portal)**: the falcon APK from [starbrightlab/hey-dist](https://github.com/starbrightlab/hey-dist), checked against its SHA-256 on the device, with the permissions it needs to connect. Sign in with the code it shows at amazon.com/code. Then it installs Réveil Alexa, grants the microphone, lets it open Alexa from the background, exempts it from battery optimisation and starts it. If you use Portal HA Bridge too, turn off its *Alexa support*.
+The first time a Portal connects, JailPortal opens a **Quick setup** checklist. **Portal Accueil home screen** installs it, grants the microphone, exempts it from battery optimisation and makes it the home screen. **Meta's Alexa** installs the falcon APK from [starbrightlab/hey-dist](https://github.com/starbrightlab/hey-dist), checked against its SHA-256 on the device, with the permissions it needs to connect; sign in with the code it shows at amazon.com/code. **Clean up** clears app caches and removes unused Meta apps (restorable). The checklist can be reopened from the dashboard.
 
 ## Getting started
 

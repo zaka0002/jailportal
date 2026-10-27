@@ -2,6 +2,7 @@ import { ConnectPanel } from "@/components/connection/ConnectPanel";
 import { DeviceCard } from "@/components/dashboard/DeviceCard";
 import { DeviceHero } from "@/components/dashboard/DeviceHero";
 import { QuickActions } from "@/components/dashboard/QuickActions";
+import { QuickSetupCard } from "@/components/dashboard/QuickSetup";
 import { SetupGuide } from "@/components/dashboard/SetupGuide";
 import { StorageBar } from "@/components/dashboard/StorageBar";
 import { ScreenMirror } from "@/components/screen/ScreenMirror";
@@ -67,6 +68,7 @@ export function DashboardPage() {
 			<DeviceCard />
 			<StorageBar />
 			<QuickActions />
+			<QuickSetupCard />
 		</div>
 	);
 }

@@ -5,11 +5,9 @@
 	"refreshSnapshot": "Refresh",
 	"viewScreen": "View screen",
 	"setupTitle": "Set up your Portal",
-	"setupSubtitle": "Four steps to get started.",
-	"step1Title": "Install a launcher",
-	"step1Desc": "Replaces the Portal home screen so you can open any Android app.",
-	"stepAlexaTitle": "Turn on hands-free Alexa",
-	"stepAlexaDesc": "Say \"Alexa\": Réveil Alexa opens the Alexa app for you. It also offers to install Amazon Alexa.",
+	"setupSubtitle": "Three steps to get started.",
+	"stepQuickTitle": "Quick setup",
+	"stepQuickDesc": "Tick what you want: a home screen that answers \"Alexa\", Meta's Alexa, a clean-up.",
 	"stepCleanupTitle": "Clean up the Portal",
 	"stepCleanupDesc": "Clear caches and remove the Meta apps you no longer use.",
 	"step2Title": "Add your apps",
@@ -60,5 +58,28 @@
 	"locked": "Locked",
 	"unlocked": "Unlocked",
 	"allowed": "Allowed",
-	"blocked": "Blocked"
+	"blocked": "Blocked",
+	"quick": {
+		"title": "Quick setup",
+		"desc": "Home screen with hands-free Alexa, Meta's Alexa and clean-up, in one go",
+		"intro": "Tick what you want on this Portal, then start. Things already installed are left unticked; tick them to reinstall or update.",
+		"run": "Start",
+		"later": "Later",
+		"installed": "Already installed",
+		"done": "Portal set up",
+		"doneHint": "Say \"Alexa\" in front of the home screen.",
+		"signIn": "On the Portal, Alexa shows a code: enter it at amazon.com/code to sign in.",
+		"home": {
+			"title": "Portal Accueil home screen",
+			"hint": "Clock, weather and your apps, and it hears \"Alexa\" without touching anything. Replaces Réveil Alexa."
+		},
+		"cleanup": {
+			"title": "Clean up the Portal",
+			"hint": "Clears app caches and removes unused Meta apps (WhatsApp, Meta photo frame, Portal feed, Story Time, Photo editor). They can be restored."
+		},
+		"alexa": {
+			"title": "Meta's Alexa",
+			"hint": "The Portal's original Alexa (115 MB), signed in with amazon.com/code. Needed for \"Alexa\" to answer."
+		}
+	}
 }

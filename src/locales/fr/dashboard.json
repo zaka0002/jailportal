@@ -5,11 +5,9 @@
 	"refreshSnapshot": "Actualiser",
 	"viewScreen": "Voir l'écran",
 	"setupTitle": "Configurez votre Portal",
-	"setupSubtitle": "Quatre étapes pour démarrer.",
-	"step1Title": "Installez un launcher",
-	"step1Desc": "Remplace l'écran d'accueil du Portal pour ouvrir n'importe quelle appli Android.",
-	"stepAlexaTitle": "Activez Alexa mains libres",
-	"stepAlexaDesc": "Dites « Alexa » : Réveil Alexa ouvre l'appli Alexa pour vous. Installe aussi Amazon Alexa si besoin.",
+	"setupSubtitle": "Trois étapes pour démarrer.",
+	"stepQuickTitle": "Démarrage rapide",
+	"stepQuickDesc": "Cochez ce que vous voulez : un écran d'accueil qui répond à « Alexa », l'Alexa de Meta, un nettoyage.",
 	"stepCleanupTitle": "Nettoyez le Portal",
 	"stepCleanupDesc": "Videz les caches et retirez les applis Meta que vous n'utilisez plus.",
 	"step2Title": "Ajoutez vos applications",
@@ -60,5 +58,28 @@
 	"locked": "Verrouillé",
 	"unlocked": "Déverrouillé",
 	"allowed": "Autorisé",
-	"blocked": "Bloqué"
+	"blocked": "Bloqué",
+	"quick": {
+		"title": "Démarrage rapide",
+		"desc": "Écran d'accueil avec Alexa mains libres, Alexa de Meta et nettoyage, en une fois",
+		"intro": "Cochez ce que vous voulez sur ce Portal, puis lancez. Ce qui est déjà installé reste décoché ; cochez-le pour le réinstaller ou le mettre à jour.",
+		"run": "Lancer",
+		"later": "Plus tard",
+		"installed": "Déjà installé",
+		"done": "Portal configuré",
+		"doneHint": "Dites « Alexa » devant l'écran d'accueil.",
+		"signIn": "Sur le Portal, Alexa affiche un code : saisissez-le sur amazon.com/code pour vous connecter.",
+		"home": {
+			"title": "Écran d'accueil Portal Accueil",
+			"hint": "Horloge, météo et vos applis, et il entend « Alexa » sans rien toucher. Remplace Réveil Alexa."
+		},
+		"cleanup": {
+			"title": "Nettoyer le Portal",
+			"hint": "Vide les caches et retire les applis Meta inutilisées (WhatsApp, Cadre photo Meta, Fil Portal, Story Time, Éditeur photo). Elles restent remettables."
+		},
+		"alexa": {
+			"title": "Alexa de Meta",
+			"hint": "L'Alexa d'origine du Portal (115 Mo), connectée avec amazon.com/code. Nécessaire pour qu'« Alexa » réponde."
+		}
+	}
 }
